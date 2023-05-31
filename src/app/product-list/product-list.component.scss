@@ -1,0 +1,32 @@
+.product-index {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1024px;
+  margin-bottom: 64px;
+}
+
+.product-container {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  padding: 5px;
+  box-sizing: border-box;
+  display: grid;
+  gap: 10px;
+  grid-template-rows: repeat(2, auto);
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-flow: column;
+}
+
+.element {
+  display: flex;
+  // border: 2px solid black;
+  text-align: center;
+  font-weight: bold;
+  padding: 5px;
+  font-size: 12px;
+}
