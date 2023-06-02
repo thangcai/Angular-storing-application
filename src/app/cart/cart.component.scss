@@ -30,3 +30,9 @@ img {
   color: red;
   font-size: 12px;
 }
+
+.trash {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}

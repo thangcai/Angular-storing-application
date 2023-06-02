@@ -26,12 +26,13 @@ export class CartComponent implements OnInit, AfterViewChecked {
   orderList: OrderList[] = [];
   orderListShow: ProductInCart[] = [];
   result = new Map();
-  amount: number = 0;
+  amount: number = 1;
   totalPrice: number = 0;
   fullname: string = '';
   address: string = '';
   credit: number = 0;
   creditCardError: boolean = false;
+  messageError: string[] = [];
 
   constructor(private productService: ProductService, private router: Router) {}
 
@@ -79,9 +80,41 @@ export class CartComponent implements OnInit, AfterViewChecked {
     return myRegExp.test(str);
   }
 
+  validate(form: NgForm) {
+    this.messageError = [];
+    let fullnameError = form.controls['fullname'].errors;
+    let addressError = form.controls['address'].errors;
+    this.creditCardError = !this.IsMatchingCard(form.value.credit);
+
+    if (fullnameError) {
+      if (fullnameError['required']) {
+        this.messageError.push('Fullname is required!');
+      }
+      if (fullnameError['minlength']) {
+        this.messageError.push('Fullname is at least 3 characters!');
+      }
+    }
+    if (addressError) {
+      if (addressError['required']) {
+        this.messageError.push('Address is required!\n');
+      }
+      if (addressError['minlength']) {
+        this.messageError.push('Address is at least 6 characters!');
+      }
+    }
+    if (this.creditCardError) {
+      this.messageError.push('The credit card number must be 16-digit number.');
+    }
+  }
+
+  deleteProduct(id: number | undefined) {
+    this.orderListShow = this.orderListShow.filter(item => item.id !== id);
+    this.calcuTotalPrice();
+    localStorage.setItem('orderProductsList', JSON.stringify(this.orderListShow));
+  }
+
   onSubmit(form: NgForm) {
     if (this.totalPrice != 0) {
-      this.creditCardError = !this.IsMatchingCard(form.value.credit);
       let bill = {
         name: form.value.fullname,
         totalPrice: this.totalPrice.toFixed(2),

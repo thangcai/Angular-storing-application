@@ -19,7 +19,7 @@ export type Product = {
 export class ProductItemDetailComponent implements OnInit {
   item: Product | undefined;
   orderList: OrderList[] = [];
-  amount: number = 0;
+  amount: number = 1;
   constructor(
     private productService: ProductService,
     private activatedRoute: ActivatedRoute

@@ -5,14 +5,18 @@ import { Product } from '../product-item-detail/product-item-detail.component';
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.scss']
+  styleUrls: ['./product-list.component.scss'],
 })
 export class ProductListComponent implements OnInit {
   items: Product[] = [];
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService) {}
   ngOnInit(): void {
-    this.productService.getProducts().subscribe(data => {
+    this.productService.getProducts().subscribe((data) => {
       this.items = data;
     });
+  }
+
+  alertAddToCart(nameOfProduct: string | undefined) {
+    alert('Added ' + nameOfProduct + ' to cart!');
   }
 }

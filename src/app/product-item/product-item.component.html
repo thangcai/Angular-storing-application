@@ -11,7 +11,7 @@
     </h5>
     <p class="card-text">${{ item?.price }}</p>
     <p class="card-text">{{ item?.description }}</p>
-    <p><input type="number" value="1" class="form-control select-input" [(ngModel)]="amount"/></p>
-    <button class="btn btn-primary" (click)="addToCart(item?.id)">Add to cart</button>
+    <p><input type="number" min="1" class="form-control select-input" [(ngModel)]="amount"/></p>
+    <button class="btn btn-primary" (click)="addToCart(item?.id);product.emit(item?.name)">Add to cart</button>
   </div>
 </div>

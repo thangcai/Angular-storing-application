@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Product } from '../product-item-detail/product-item-detail.component';
 
 export type OrderList = {
@@ -13,7 +13,8 @@ export type OrderList = {
 })
 export class ProductItemComponent implements OnInit {
   @Input() item: Product | undefined;
-  amount: number = 0;
+  @Output() product = new EventEmitter();
+  amount: number = 1;
   orderList: OrderList[] = [];
   constructor() {}
   ngOnInit(): void {}

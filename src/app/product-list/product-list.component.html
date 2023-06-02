@@ -1,5 +1,5 @@
 <div class="container">
   <div class="element" *ngFor="let item of items">
-    <app-product-item [item]="item"></app-product-item>
+    <app-product-item [item]="item" (product)="alertAddToCart(item?.name)"></app-product-item>
   </div>
 </div>
