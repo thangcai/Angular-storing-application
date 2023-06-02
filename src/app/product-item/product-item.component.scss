@@ -8,6 +8,7 @@
 
 .product-container {
   margin-top: 64px;
+  margin-bottom: 64px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -15,7 +16,6 @@
   justify-content: flex-start;
 }
 
-.select-input {
-  width: 108px;
-  margin-bottom: 8px;
+.cursor {
+  cursor: pointer;
 }

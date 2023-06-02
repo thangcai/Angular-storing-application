@@ -3,6 +3,13 @@ img {
   width: 320px;
 }
 
+.padding-content {
+  padding-left: 60px;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+
 .select-input {
   width: 108px;
   margin-bottom: 8px;
@@ -15,11 +22,10 @@ img {
   margin-top: 64px;
 }
 
-.detail-item {
-  margin-left: 128px;
-  margin-right: 128px;
+.back-link {
+  color: rgb(0, 145, 255);
 }
 
-.back-link {
-  margin-top: 8px;
+.cursor {
+  cursor: pointer;
 }

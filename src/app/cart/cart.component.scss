@@ -1,0 +1,32 @@
+img {
+  width: 100px;
+  border-radius: 10px;
+}
+
+.cart-item-details {
+  padding-right: 50px;
+}
+
+.detail-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 64px;
+}
+
+.text-input {
+  margin-bottom: 10px;
+}
+
+.label-input {
+  font-weight: 550;
+}
+
+.payment {
+  font-size: 11px;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+}

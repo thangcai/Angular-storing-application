@@ -1,9 +1,11 @@
 .background {
-  background-color: blue;
+  background-color: rgb(75, 136, 227);
   color: white;
   text-align: center;
-}
-h1 {
-    padding-top: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
+.cursor {
+  cursor: pointer;
+}

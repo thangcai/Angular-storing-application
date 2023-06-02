@@ -1,9 +1,17 @@
-<div class="card" style="width: 18rem">
-  <img src="{{ item.url }}" class="card-img-top" alt="aaa" />
+<div class="product-container" style="width: 18rem">
+  <img
+    src="{{ item?.url }}"
+    class="card-img-top product-image cursor"
+    alt="aaa"
+    routerLink="/detail/{{ item?.id }}"
+  />
   <div class="card-body">
-    <h5 class="card-title">{{ item.name }}</h5>
-    <p class="card-text">{{ item.description }}</p>
-    <input type="number">
-    <a href="#" class="btn btn-primary">Add to cart</a>
+    <h5 class="card-title cursor" routerLink="/detail/{{ item?.id }}">
+      {{ item?.name }}
+    </h5>
+    <p class="card-text">${{ item?.price }}</p>
+    <p class="card-text">{{ item?.description }}</p>
+    <p><input type="number" value="1" class="form-control select-input" [(ngModel)]="amount"/></p>
+    <button class="btn btn-primary" (click)="addToCart(item?.id)">Add to cart</button>
   </div>
 </div>
